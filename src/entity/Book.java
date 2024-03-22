@@ -1,16 +1,17 @@
 package entity;
 
-public class Book {
+public class Book extends Author{
     private int id;
     private String title;
     private String pubicationDate;
     private int price;
-    private Author author;
+    private int author;
 
     public Book(){}
 
-    public Book(int id, String title, String pubicationDate, int price, Author author) {
-        this.id = id;
+    public Book(int id, String name, String nationality, int id1, String title, String pubicationDate, int price, int author) {
+        super(id, name, nationality);
+        this.id = id1;
         this.title = title;
         this.pubicationDate = pubicationDate;
         this.price = price;
@@ -49,11 +50,11 @@ public class Book {
         this.price = price;
     }
 
-    public Author getAuthor() {
+    public int getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(int author) {
         this.author = author;
     }
 
@@ -61,10 +62,10 @@ public class Book {
     public String toString() {
         return
                 "id: " + id + "\n" +
-                "pubicationDate: " + pubicationDate + "\n" +
+                "pubication Date: " + pubicationDate + "\n" +
                 "price: " + price + "\n" +
                 "title: " + title + "\n" +
-                "author:" + author
+                "author: " + super.getName() + "\n"
                 ;
     }
 }
